@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Results of Guting paper implementation</title>
+</head>
+
+<body>
+
+    <h1><u>Measure Algorithm</u></h1>
+    <p>The measure algorithm first divides the 2d plane into stripes which are defined by horizontal edges of
+        rectangles. Then each contribution from a stripe towards the area is calculated followed by summing them up. It
+        uses the divide and conquer strategy with linear time taken to conquer. Hence the running time is nlogn.
+    </p>
+    <h1><u>Contour Algorithm</u></h1>
+    <p>This algorithm also uses stripes for finding the contour of a set of rectangels in the plane. The intersection of
+        the free region of a stripe with respect to a horizontal edge of a rectangle and the edge itself gives us the
+        contribution for that edge. Our implementation finds the stripes in nlogn time and then finds the contour in
+        quadratic time.</p>
+
+    <h2>Assumption: No two rectangles have edges in alignment(y coordinates are distinct).</h2>
+    <h1><u>Results:</u></h1>
+
+    <h2>Input Format:-</h2>
+    <p><strong>n<br>x1 x2 y1 y2 (n lines)</strong><br>Here n is the number of rectangles and (x1,y1) and (x2,y2) are the
+        bottom left and top right corner points of a rectangle respectively.</p>
+    <h2>#1:</h2>
+    <h3>Input:-</h3>
+    <p>1<br>10 20 5 15</p>
+    <img src="images/1.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 100</p>
+    <p>Execution time: 0.13132ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 40</p>
+    <p>Execution Time: 0.28207ms</p>
+    <img src="images/1o.png" width=auto>
+
+    <h2>#2:</h2>
+    <h3>Input:-</h3>
+    <p>2 <br>
+        0 4 0 7<br>
+        100 105 5 10</p>
+    <img src="images/2.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 53</p>
+    <p>Execution time: 0.351946ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 42</p>
+    <p>Execution Time: 0.384104ms</p>
+    <img src="images/2o.png" width=auto>
+
+    <h2>#3:</h2>
+    <h3>Input:-</h3>
+    <p>5 <br>
+        0 6 4 10<br>
+        4 9 5 6<br>
+        5 8 0 7<br>
+        7 10 8 9<br>
+        2 3 1 3</p>
+    <img src="images/3.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 60</p>
+    <p>Execution time: 1.18799ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 52</p>
+    <p>Execution Time: 2.44766ms</p>
+    <img src="images/3o.png" width=auto>
+
+    <h2>#4:</h2>
+    <h3>Input:-</h3>
+    <p>5<br>
+        6 46 2 37 <br>
+        17 30 4 35 <br>
+        2 36 33 35 <br>
+        7 45 30 44 <br>
+        17 24 18 32</p>
+    <img src="images/4.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 1674</p>
+    <p>Execution time: 1.55174ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 172</p>
+    <p>Execution Time: 2.53194ms</p>
+    <img src="images/4o.png" width=auto>
+
+    <h2>#5:</h2>
+    <h3>Input:-</h3>
+    <p>100<br>
+        -605998 580103 582042 768321<br>
+        -846877 715249 -331011 851826<br>
+        -412394 848820 -340190 603853<br>
+        -113158 429352 -991413 333888<br>
+        11257 611053 -603359 51006<br>
+        -955828 903866 -213338 647031<br>
+        -23658 -23446 -122785 -54391<br>
+        170112 207686 -808175 414219<br>
+        -559596 -517939 -961339 -746193<br>
+        -810697 -641754 -781052 -358335<br>
+        204489 608314 28622 338500<br>
+        -581555 -62739 -620751 165290<br>
+        -944041 56930 -312270 -296931<br>
+        -189872 492749 -439990 -20431<br>
+        -645882 595132 58944 777751<br>
+        280488 568065 -548247 10011<br>
+        809011 993439 -992423 902208<br>
+        -355336 204510 -577670 -68861<br>
+        -249296 46781 52228 418868<br>
+        816293 903795 -238194 342781<br>
+        -556223 395053 555866 620774<br>
+        -75314 12511 256932 576727<br>
+        -965534 -675711 -444437 188970<br>
+        -696734 -260110 440475 559630<br>
+        -186041 185049 -814190 -382537<br>
+        616089 840134 379447 799685<br>
+        -81239 518674 -224855 571806<br>
+        -344888 518292 -249113 220193<br>
+        -894235 -392343 -731077 616042<br>
+        -821106 232419 -757507 144263<br>
+        -706657 -553070 -815400 -396748<br>
+        -967595 -442815 -684721 5449<br>
+        -435787 590190 -973534 -339036<br>
+        -322045 78284 245408 362820<br>
+        245088 948781 461219 674375<br>
+        -637543 -53363 -827043 -440532<br>
+        145074 651862 -940982 709466<br>
+        -969778 584413 -492174 576018<br>
+        118001 336920 -727835 -391814<br>
+        -370042 783949 -803247 -565486<br>
+        -519969 934352 -456970 893879<br>
+        572991 617628 -168905 197871<br>
+        119083 757549 735925 938835<br>
+        -658465 -206247 -436250 438842<br>
+        -609753 -324960 -954513 23686<br>
+        -123437 733603 455940 902618<br>
+        -765280 748326 -943075 981834<br>
+        -656454 668599 10334 186702<br>
+        -522783 96446 319066 703829<br>
+        -594579 489841 -621171 620975<br>
+        -195694 303902 248986 676432<br>
+        696714 903986 408169 930628<br>
+        -934857 752955 -567153 465028<br>
+        -901762 -474940 -833824 -814090<br>
+        -754117 346036 -341388 894818<br>
+        576024 719302 -649967 767674<br>
+        -418246 3184 -26225 111754<br>
+        -807203 -402041 -640502 -534104<br>
+        -545909 684004 -882067 72831<br>
+        1137 72627 -366137 890299<br>
+        -465829 301248 -952309 -415852<br>
+        -256213 824326 -663480 372423<br>
+        -74879 550996 61096 800327<br>
+        -842498 2108 4174 355202<br>
+        -655967 249709 896998 998786<br>
+        -213888 836058 559473 952855<br>
+        -615208 -206803 -667658 -251532<br>
+        -476130 581143 -657877 637056<br>
+        -768602 271673 -954464 90972<br>
+        94853 108708 187001 992440<br>
+        53615 150769 319149 471381<br>
+        -924695 -761397 301515 432977<br>
+        -93001 -18722 -395776 244602<br>
+        -895862 -855875 572505 953836<br>
+        274495 727794 199274 397333<br>
+        -781718 295951 -704635 -83470<br>
+        -73552 124245 -804722 616673<br>
+        -794434 -187371 -330441 371290<br>
+        92463 99042 -810547 -17717<br>
+        -945175 545883 -756454 -53062<br>
+        -61077 418956 -465448 -4111<br>
+        -216368 411109 -491139 -467217<br>
+        -875249 968041 -885606 -624807<br>
+        -347350 -272527 -377462 973650<br>
+        -659512 183792 -907401 -652197<br>
+        -750449 -743117 -326020 300962<br>
+        -322656 -202442 -837578 -514491<br>
+        -887253 104005 -582657 766860<br>
+        -608935 -504405 -969443 -20061<br>
+        -536689 -491554 362814 856320<br>
+        -32543 950655 -666963 -538585<br>
+        135986 522730 -986395 630654<br>
+        -617931 736266 -993244 110974<br>
+        -173257 642423 -836323 -602362<br>
+        -312417 548132 -724058 -206506<br>
+        -419536 242073 -971580 -316014<br>
+        896302 955037 -290827 367824<br>
+        -800843 944908 -588019 200868<br>
+        -205159 640795 -306767 -62915<br>
+        -653446 997933 -807425 -480167</p>
+    <img src="images/5.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 3793130598612</p>
+    <p>Execution time: 19.6079ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 8560094</p>
+    <p>Execution Time: 52.0365ms</p>
+    <img src="images/5o.png" width=auto>
+
+    <h2>#6:</h2>
+    <h3>Input:-</h3>
+    <p>4 <br>
+        0 10 4 5<br>
+        1 2 3 6<br>
+        3 4 2 7<br>
+        5 6 0 9</p>
+    <img src="images/6.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 24</p>
+    <p>Execution time: 1.01434ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 50</p>
+    <p>Execution Time: 2.08098ms</p>
+    <img src="images/6o.png" width=auto>
+
+    <h2>#7:</h2>
+    <h3>Input:-</h3>
+    <p>8<br>
+        0 10 1 2<br>
+        0 10 3 4<br>
+        0 10 5 6 <br>
+        0 10 7 8<br>
+        1 2 0 9<br>
+        3 4 -1 10<br>
+        5 6 -2 11<br>
+        7 8 -3 12</p>
+    <img src="images/7.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 72</p>
+    <p>Execution time: 2.32558ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 128</p>
+    <p>Execution Time: 4.17866ms</p>
+    <img src="images/7o.png" width=auto>
+
+    <h2>#8:</h2>
+    <h3>Input:-</h3>
+    <p>11<br>
+        0 3 0 3<br>
+        12 15 -1 4<br>
+        12 15 11 16<br>
+        0 3 12 15<br>
+        6 9 6 9<br>
+        1 2 -2 17<br>
+        7 8 5 10<br>
+        13 14 -3 18<br>
+        0 15 1 2<br>
+        -1 16 7 8<br>
+        0 15 13 14</p>
+    <img src="images/8.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 113</p>
+    <p>Execution time: 3.93173ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 168</p>
+    <p>Execution Time: 5.93912ms</p>
+    <img src="images/8o.png" width=auto>
+
+    <h2>#9:</h2>
+    <h3>Input:-</h3>
+    <p>8<br>
+        0 2 0 2<br>
+        .25 2.25 .25 2.25<br>
+        0.5 2.5 0.5 2.5<br>
+        0.75 2.75 .75 2.75<br>
+        1 3 1 3<br>
+        1.25 3.25 1.25 3.25<br>
+        1.5 3.5 1.5 3.5<br>
+        1.75 3.75 1.75 3.75</p>
+    <img src="images/9.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 10.5625</p>
+    <p>Execution time: 2.85074ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 15</p>
+    <p>Execution Time: 4.91805ms</p>
+    <img src="images/9o.png" width=auto>
+
+
+    <h2>#10:</h2>
+    <h3>Input:-</h3>
+    <p>10<br>
+        6 15 6 15<br>
+        7 14 7 14<br>
+        8 13 8 13<br>
+        9 12 9 12<br>
+        10 11 10 11<br>
+        10 11 1 20<br>
+        9 12 2 19<br>
+        8 13 3 18<br>
+        7 14 4 17<br>
+        6 15 5 16
+    </p>
+    <img src="images/10.png" width=auto>
+    <h3>Measure:-</h3>
+    <p>Area: 131</p>
+    <p>Execution time: 4.4272ms</p>
+    <h3>Contour:-</h3>
+    <p>Perimeter: 56</p>
+    <p>Execution Time: 5.28924ms</p>
+    <img src="images/10o.png" width=auto>
+
+</body>
+
+</html>
